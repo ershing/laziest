@@ -1,0 +1,23 @@
+{
+  "name": "laziest",
+  "version": "1.0.0",
+  "description": "a template engine for es6",
+  "main": "laziest.js",
+  "scripts": {
+    "test": "nodemon laziest.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ershing/laziest.git"
+  },
+  "keywords": [
+    "template",
+    "engine"
+  ],
+  "author": "ershing",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ershing/laziest/issues"
+  },
+  "homepage": "https://github.com/ershing/laziest#readme"
+}
