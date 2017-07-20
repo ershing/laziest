@@ -1,5 +1,7 @@
 
-function compile(template) {
+function compile(path) {
+    var fs = require('fs');
+    var template = fs.readFileSync(path, 'utf8');
     var evalExpr = /#{(.+?)}/g;
     var expr = /<%([\s\S]+?)%>/g;
 
@@ -14,14 +16,13 @@ function compile(template) {
             var output = "";
 
             function echo(html){
-            output += html;
+                output += html;
             }
 
             ${template}
 
             return output;
         })`;
-
     return eval(script);
 }
 
