@@ -1,0 +1,14 @@
+[
+    {
+        "index":1,
+        "introduction":"my name is Jack,my sex is male and my age is 12"
+    },
+    {
+        "index":2,
+        "introduction":"my name is Rose,my sex is female and my age is 13"
+    },
+    {
+        "index":3,
+        "introduction":"my name is Kate,my sex is female and my age is 11"
+    }
+]

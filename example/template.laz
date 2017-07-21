@@ -1,0 +1,6 @@
+[<%data.forEach((ele,index)=>{%>
+    {
+        "index":#{index+1},
+        "introduction":"my name is #{ele.name},my sex is #{ele.sex} and my age is #{ele.age}"
+    }<%if(index < data.length-1 ){%>,<%}else%><%})%>
+]
