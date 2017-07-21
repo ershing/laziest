@@ -24,7 +24,7 @@ fs.writeFileSync(filePath,output);
 #{ 变量名称 }  //插入变量值
 ```
 ### 例子详解
-**已拥有数据文件[studentList.json](https://github.com/ershing/laziest/blob/master/example/studentList.json),内容如下：**
+**零、已拥有数据文件[studentList.json](https://github.com/ershing/laziest/blob/master/example/studentList.json),内容如下：**
 ```json
 [
     {
@@ -44,7 +44,7 @@ fs.writeFileSync(filePath,output);
     }
 ]
 ```
-**希望生成[output.json](https://github.com/ershing/laziest/blob/master/example/output.json)文件，内容如下：**
+**一、希望生成[output.json](https://github.com/ershing/laziest/blob/master/example/output.json)文件，内容如下：**
 ```json
 [
     {
@@ -61,8 +61,8 @@ fs.writeFileSync(filePath,output);
     }
 ]
 ```
-**编写模板代码过程如下：**<br>
-先观察生成文件结构，知道是循环输出，然后开始新建模板。<br>
+**二、编写模板代码过程如下：**<br>
+（1）先观察生成文件结构，知道是循环输出，然后开始新建模板。<br>
 新建一个模板[template.laz](https://github.com/ershing/laziest/blob/master/example/template.laz)（注意后缀名称是laz），忽略变量和循环，初步框架内容如下：
 ```javascript
 [
@@ -72,7 +72,7 @@ fs.writeFileSync(filePath,output);
     }
 ]
 ```
-然后开始通过**#{ }**符号添加常规变量：
+（2）然后开始通过 **#{ }** 符号添加常规变量：
 ```javascript
 [
     {
@@ -81,7 +81,7 @@ fs.writeFileSync(filePath,output);
     }
 ]
 ```
-最后再通过**<% %>**符号插入含有逻辑的js代码，用法类似js代码中插入php代码，注意中间输出部分不能放置在**<% %>**中,如中间有输出，则需要将js代码前半部分用**%>**闭合，中间填写输出内容（可用**#{ }**对变量取值），再用**<%**开始后半部分，如下：
+（3）最后再通过 **<% %>** 符号插入含有逻辑的js代码，用法类似js代码中插入php代码，注意中间输出部分不能放置在 **<% %>** 中,如中间有输出，则需要将js代码前半部分用 **%>** 闭合，中间填写输出内容（可用 **#{ }** 对变量取值），再用 **<%** 开始后半部分，如下：
 ```javascript
 [<%data.forEach((ele,index)=>{%>
     {
@@ -90,7 +90,7 @@ fs.writeFileSync(filePath,output);
     }<%if(index < data.length-1 ){%>,<%}else%><%})%>
 ]
 ```
-**最后，在[generate.js](https://github.com/ershing/laziest/blob/master/example/generate.js)文件中编写生成代码如下：**
+**三、最后，在[generate.js](https://github.com/ershing/laziest/blob/master/example/generate.js)文件中编写生成代码如下：**
 ```javascript
 //引入laziest模块
 const laziest = require('laziest');
